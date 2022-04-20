@@ -12,9 +12,9 @@ export class AppComponent implements OnInit {
     private channelService: ChannelService,
     private streamI18nService: StreamI18nService,
   ) {
-    const apiKey = 't3xrajrte7cd';
-    const userId = '203926';
-    const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjAzOTI2In0.gZTAuTRMg3dBKYEjI8IJ-UrAQc2wCPZbOqXUHznnmB8';
+    const apiKey = ''
+    const userId = ''
+    const userToken = ''
     this.chatService.init(apiKey, userId, userToken);
     this.streamI18nService.setTranslation();
   }
