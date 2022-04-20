@@ -1,1 +1,2 @@
-Run `npm install` then `npm run` and fill out the user credentials in `app.component.ts`
+Run `npm install` then `npm start` to use.
+fill out the user/token credentials in `app.component.ts`
