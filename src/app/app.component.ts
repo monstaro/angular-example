@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ChatClientService, ChannelService, StreamI18nService } from 'stream-chat-angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'chat-example';
+export class AppComponent implements OnInit {
+  constructor(
+    private chatService: ChatClientService,
+    private channelService: ChannelService,
+    private streamI18nService: StreamI18nService,
+  ) {
+    const apiKey = 't3xrajrte7cd';
+    const userId = '203926';
+    const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjAzOTI2In0.gZTAuTRMg3dBKYEjI8IJ-UrAQc2wCPZbOqXUHznnmB8';
+    this.chatService.init(apiKey, userId, userToken);
+    this.streamI18nService.setTranslation();
+  }
+
+  async ngOnInit() {
+
+    this.channelService.init({
+      members: { $in: ['203926'] },
+    });
+  }
 }
